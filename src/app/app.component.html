@@ -8,4 +8,6 @@
 <!--<body>-->
 <!--<app-animal-list class="color"></app-animal-list>-->
 <!--</body>-->
-<app-product></app-product>
+<app-product (OnProductSelection)="onProductSelection($event)"></app-product>
+<app-cart [products]="products"></app-cart>
+<p>{{'ayush' | repeat:5}}</p>

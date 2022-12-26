@@ -6,4 +6,5 @@ export interface IProduct{
   category:string
   price:number
   rating:number
+  Quantity:number
 }

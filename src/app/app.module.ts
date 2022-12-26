@@ -10,6 +10,8 @@ import {AnimalListComponent} from "./animals/animal-list.component";
 import {FormsModule} from "@angular/forms";
 import { ProductComponent } from './product/product.component';
 import { StarComponent } from './star/star.component';
+import { CartComponent } from './cart/cart.component';
+import { RepeatPipe } from './repeat.pipe';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { StarComponent } from './star/star.component';
         FlatListComponent,
         AnimalListComponent,
         ProductComponent,
-        StarComponent
+        StarComponent,
+        CartComponent,
+        RepeatPipe
     ],
   imports: [
     BrowserModule,
