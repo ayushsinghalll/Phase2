@@ -16,6 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { NavbarcomponentComponent } from './navbarcomponent/navbarcomponent.component';
 import { EventComponent } from './event/event.component';
 import { EventDetailsComponent } from './event/event-details.component';
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataBaseService} from "../../Service/inMemoryDataBase.service";
 
 @NgModule({
     declarations: [
@@ -35,7 +37,8 @@ import { EventDetailsComponent } from './event/event-details.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataBaseService)
   ],
   providers: [],
   bootstrap: [AppComponent]

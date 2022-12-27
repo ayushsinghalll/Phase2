@@ -17,6 +17,7 @@ export class EventComponent implements OnInit {
   Events:IEvent[]=[]
 
   filteredEvent:IEvent[]=[]
+  selectedProduct!:IEvent | null;
 
   ngOnInit(): void {
     this.sub = this.eventService.getEvents().subscribe((response)=>{
@@ -31,5 +32,12 @@ export class EventComponent implements OnInit {
       console.log('Completed')
       }
       )
+    this.eventService.selectedEventChanges$.subscribe(currentProduct=>this.selectedProduct=currentProduct);
+  }
+  newProduct():void{
+    this.eventService.changeSelectedEvent(this.eventService.newProduct());
+  }
+  productSelected(product:IEvent):void{
+    this.eventService.changeSelectedEvent(product);
   }
 }
