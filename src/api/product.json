@@ -1,0 +1,54 @@
+[{
+  "id": 1,
+  "name": "Cloths",
+  "image": "",
+  "category": "T shirt",
+  "price": 456,
+  "rating": 3,
+  "Quantity": 5
+},
+{
+"id": 2,
+"name": "Cloths",
+"image": "",
+"category": "Shirt",
+"price": 700,
+"rating": 4,
+"Quantity": 2
+},
+{
+"id": 3,
+"name": "Cloths",
+"image": "",
+"category": "Jeans",
+"price": 1500,
+"rating": 4.5,
+"Quantity": 4
+},
+{
+"id": 1,
+"name": "Mobile",
+"image": "",
+"category": "Redmi",
+"price": 15000,
+"rating": 5,
+"Quantity": 7
+},
+{
+"id": 2,
+"name": "Mobile",
+"image": "",
+"category": "Iphone",
+"price": 630000,
+"rating": 2,
+"Quantity": 2
+},
+{
+"id": 3,
+"name": "Mobile",
+"image": "",
+"category": "RealMe",
+"price": 380000,
+"rating": 3.5,
+"Quantity": 3
+}]

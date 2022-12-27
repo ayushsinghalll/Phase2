@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import {LoggingService} from "../../../Service/logging.service";
 
 @Component({
     selector:'welcome',
@@ -7,6 +8,12 @@ import { Component } from "@angular/core";
 })
 
 export class WelcomeComponent{
-    title = 'Welcome Component'
 
+  constructor(private loggingService:LoggingService) {
+  }
+
+
+  fun() {
+    console.log(this.loggingService.getLogging())
+  }
 }
