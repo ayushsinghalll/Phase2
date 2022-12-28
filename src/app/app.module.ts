@@ -18,6 +18,7 @@ import { EventComponent } from './event/event.component';
 import { EventDetailsComponent } from './event/event-details.component';
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataBaseService} from "../../Service/inMemoryDataBase.service";
+import { EmojiDirective } from './emoji.directive';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import {InMemoryDataBaseService} from "../../Service/inMemoryDataBase.service";
         RepeatPipe,
         NavbarcomponentComponent,
         EventComponent,
-        EventDetailsComponent
+        EventDetailsComponent,
+        EmojiDirective
     ],
   imports: [
     BrowserModule,

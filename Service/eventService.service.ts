@@ -37,7 +37,7 @@ export class EventService{
 
     if(err.error instanceof ErrorEvent)
     {
-      errorMessage = `An error has occured ${err.error.message}`
+      errorMessage = `An error has occurred ${err.error.message}`
     }
     else{
 

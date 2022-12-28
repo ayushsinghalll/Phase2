@@ -11,7 +11,7 @@ export class WelcomeComponent{
 
   constructor(private loggingService:LoggingService) {
   }
-
+  title:string='Welcome Component'
 
   fun() {
     console.log(this.loggingService.getLogging())
