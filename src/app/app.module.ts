@@ -7,7 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FlatListComponent } from './flats/flat-list.component';
 
 import {AnimalListComponent} from "./animals/animal-list.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ProductComponent } from './product/product.component';
 import { StarComponent } from './star/star.component';
 import { CartComponent } from './cart/cart.component';
@@ -19,6 +19,8 @@ import { EventDetailsComponent } from './event/event-details.component';
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataBaseService} from "../../Service/inMemoryDataBase.service";
 import { EmojiDirective } from './emoji.directive';
+import { TrusteeComponent } from './trustee/trustee.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
     declarations: [
@@ -34,13 +36,16 @@ import { EmojiDirective } from './emoji.directive';
         NavbarcomponentComponent,
         EventComponent,
         EventDetailsComponent,
-        EmojiDirective
+        EmojiDirective,
+        TrusteeComponent,
+        BookComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataBaseService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataBaseService),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
