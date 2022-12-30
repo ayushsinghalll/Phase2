@@ -5,6 +5,7 @@ import {BookComponent} from "./book/book.component";
 import {StudentComponent} from "./student/student.component";
 import {HomeComponent} from "./home/home.component";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
+import {TrusteeComponent} from "./trustee/trustee.component";
 
 
 
@@ -19,6 +20,9 @@ const routes:Routes=[
   },
   {
     path:'student',component:StudentComponent,pathMatch:'full'
+  },
+  {
+    path:'',component:TrusteeComponent,pathMatch:"full"
   },
   {
     path:'**',component:PagenotfoundComponent
