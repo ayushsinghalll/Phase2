@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-book',
@@ -7,18 +7,23 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-title2='Book Form'
+
   bookForm:FormGroup
   constructor(private formBuilder:FormBuilder) {
   this.bookForm=this.formBuilder.group({
     id:['1',[Validators.required,Validators.max(10)]],
     title:['Java',[Validators.required,Validators.minLength(4)]],
-    dateOfPublishing:['2000/12/12',[Validators.required]],
+    dateOfPublishing:['12-12-2000',[Validators.required]],
     author:this.formBuilder.group({
       Name:['Ayush',[Validators.required]],
       Email:['ayush@gmail.com',[Validators.required]]
-    })
+    }),
+    publishers:this.formBuilder.array([])
+
   })
+  }
+  ngOnInit(): void {
+
   }
 get id(){
   return this.bookForm.get('id')
@@ -29,13 +34,27 @@ get title(){
 get dateOfPublishing(){
   return this.bookForm.get('dateOfPublishing')
 }
-get name(){
-  return this.bookForm.get('author')?.get('name')
+get Name(){
+  return this.bookForm.get('author')?.get('Name')
 }
-get email(){
-  return this.bookForm.get('author')?.get('email')
+get Email(){
+  return this.bookForm.get('author')?.get('Email')
 }
-  ngOnInit(): void {
+
+  publishers():FormArray{
+    return this.bookForm.get('publishers') as FormArray
+  }
+  newPublisher():FormGroup{
+    return this.formBuilder.group({
+      publisherName:'',
+      publisherCity:''
+    })
+  }
+  addPublisher(){
+    this.publishers().push(this.newPublisher())
+  }
+  removePublisher(publisherIndex:number){
+    this.publishers().removeAt(publisherIndex)
   }
   onSubmit(){
     console.log(this.bookForm.value);

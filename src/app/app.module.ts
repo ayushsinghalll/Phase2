@@ -21,6 +21,12 @@ import {InMemoryDataBaseService} from "../../Service/inMemoryDataBase.service";
 import { EmojiDirective } from './emoji.directive';
 import { TrusteeComponent } from './trustee/trustee.component';
 import { BookComponent } from './book/book.component';
+import { StudentComponent } from './student/student.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterLinkActive, RouterLinkWithHref, RouterOutlet} from "@angular/router";
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
 
 @NgModule({
     declarations: [
@@ -38,14 +44,21 @@ import { BookComponent } from './book/book.component';
         EventDetailsComponent,
         EmojiDirective,
         TrusteeComponent,
-        BookComponent
+        BookComponent,
+        StudentComponent,
+        HomeComponent,
+        PagenotfoundComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataBaseService),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterOutlet,
+    RouterLinkWithHref,
+    RouterLinkActive
   ],
   providers: [],
   bootstrap: [AppComponent]
