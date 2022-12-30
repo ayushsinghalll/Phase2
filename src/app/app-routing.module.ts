@@ -22,7 +22,7 @@ const routes:Routes=[
     path:'student',component:StudentComponent,pathMatch:'full'
   },
   {
-    path:'',component:TrusteeComponent,pathMatch:"full"
+    path:'trst',component:TrusteeComponent,pathMatch:"full"
   },
   {
     path:'**',component:PagenotfoundComponent
