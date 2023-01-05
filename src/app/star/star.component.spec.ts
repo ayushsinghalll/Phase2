@@ -10,7 +10,7 @@ describe('StarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ StarComponent ]
     })
-      .compileComponents();
+    .compileComponents();
 
     fixture = TestBed.createComponent(StarComponent);
     component = fixture.componentInstance;
@@ -25,32 +25,32 @@ describe('StarComponent', () => {
 
   it(`should check whether @Output is
   correctly emitting event  object of string type `,()=>{
-    //we are spying on emit method of the ratingclicked event object of the component
-    spyOn(component.ratingChanged,'emit');
+ //we are spying on emit method of the ratingclicked event object of the component
+        spyOn(component.ratingClicked,'emit');
 
-    //getting the div with crop class
-    const div =fixture.nativeElement.querySelector('.crop');
+        //getting the div with crop class
+        const div =fixture.nativeElement.querySelector('.crop');
 
-    //we are assigning new textcontent to #h1
-    fixture.nativeElement.querySelector('#h1').textContent=
-      'child sending hello to parent';
+        //we are assigning new textcontent to #h1
+        fixture.nativeElement.querySelector('#h1').textContent=
+        'child sending hello to parent';
 
-    //we are creating inputText as a const and the value of #h1 textcontent
-    const inputText = fixture.nativeElement.querySelector('#h1').textContent;
-    fixture.detectChanges();
+        //we are creating inputText as a const and the value of #h1 textcontent
+        const inputText = fixture.nativeElement.querySelector('#h1').textContent;
+        fixture.detectChanges();
 
-    //simulating the div click
-    div.click();
+        //simulating the div click
+        div.click();
 
-    //angular change detection cycle is triggered to look out for changes in the component
+        //angular change detection cycle is triggered to look out for changes in the component
 
-    fixture.detectChanges();
+        fixture.detectChanges();
 
-    //once when the ratingclicked event emits the value "A new value in the child component';
+        //once when the ratingclicked event emits the value "A new value in the child component';
 
 
-    expect(component.ratingChanged.emit).
-    toHaveBeenCalledWith(inputText);
+        expect(component.ratingClicked.emit).
+        toHaveBeenCalledWith(inputText);
 
 
 

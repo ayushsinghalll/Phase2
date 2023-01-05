@@ -9,14 +9,13 @@ import { FlatListComponent } from './flats/flat-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsListComponent } from './products/products-list.component';
 import { StarComponent } from './star/star.component';
-import { ProductEditComponent } from './products/product-edit.component';
 import { C1Component } from './c1/c1.component';
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
 import { CartComponent } from './cart/cart.component';
 import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
-import { ProductService } from 'shared/product.service';
+import { ProductService } from 'src/app/shared/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './navbar/navbar.component';
 import { EventsListComponent } from './events/events-list.component';
@@ -44,63 +43,79 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeLeaveComponent } from './employee/employee-leave.component';
 import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
 import { GreetComponent } from './greet/greet.component';
-//import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './home/menu.component';
+import { ShellComponent } from './home/shell.component';
+import { LoginComponent } from './user/login.component';
+import { AnimalsComponent } from './animals/animals.component';
+import { GreetingsComponent } from './greetings/greetings.component';
+import {CardListComponent} from "./cards/cardlist.component";
+import { CardComponent } from './cards/card.component';
+import {TodoModule} from "./todo/todo.module";
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 
 @NgModule({
 
-  //declarations array will have the
-  // declarations of the components or pipes or services declared in this class
+    declarations: [
+        AppComponent,
+        PentHouseComponent,
+        WelcomeComponent,
+        FlatListComponent,
+        ProductsListComponent,
+        StarComponent,
 
-  declarations: [
-    AppComponent,
-    PentHouseComponent,
-    WelcomeComponent,
-    FlatListComponent,
-    ProductsListComponent,
-    StarComponent,
-    ProductEditComponent,
-    C1Component,
-    AComponent,
-    BComponent,
-    CartComponent,
-    TransformDataPipe,
-    RepeatPipe,
-    NavBarComponent,
-    EventsListComponent,
-    EventDetailComponent,
-    ProductAddComponent,
-    CreateTrusteeComponent,
-    EditTrusteeComponent,
-    HeaderComponent,
-    SidebarComponent,
-    TrusteeListComponent,
-    ViewTrusteeComponent,
-    EmojiDirective,
-    EmployeeComponent,
-    GetValidatorDirective,
-    StudentAddComponent,
-    EmployeeArrayComponent,
-    HomeComponent,
-    DashBoardComponent,
-    AboutUsComponent,
-    PagenotfoundComponent,
-    EmployeeListComponent,
-    EmployeeDetailComponent,
-    EmployeeLeaveComponent,
-    EmployeeSuggestionsComponent,
-    GreetComponent,
-    //LoginComponent
+        C1Component,
+        AComponent,
+        BComponent,
+        CartComponent,
+        TransformDataPipe,
+        RepeatPipe,
+        NavBarComponent,
+        EventsListComponent,
+        EventDetailComponent,
+        ProductAddComponent,
+        CreateTrusteeComponent,
+        EditTrusteeComponent,
+        HeaderComponent,
+        SidebarComponent,
+        TrusteeListComponent,
+        ViewTrusteeComponent,
+        EmojiDirective,
+        EmployeeComponent,
+        GetValidatorDirective,
+        StudentAddComponent,
+        EmployeeArrayComponent,
+        HomeComponent,
+        DashBoardComponent,
+        AboutUsComponent,
+        PagenotfoundComponent,
+        EmployeeListComponent,
+        EmployeeDetailComponent,
+        EmployeeLeaveComponent,
+        EmployeeSuggestionsComponent,
+        GreetComponent,
+        MenuComponent,
+        ShellComponent,
+        LoginComponent,
+        AnimalsComponent,
+        GreetingsComponent,
+        CardListComponent,
+        CardComponent,
 
+    ],
 
-  ],
-  //imports mention the names of the modules on which my appmodule is dependent
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([AppEffects]),
+    StoreDevtoolsModule.instrument(),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],
   providers: [],

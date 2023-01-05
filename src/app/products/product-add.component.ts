@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { GenericValidator } from 'shared/genericvalidator';
-import { ProductService } from 'shared/product.service';
+import { GenericValidator } from 'src/app/shared/genericvalidator';
+import { ProductService } from 'src/app/shared/product.service';
 import { Category, IProduct } from './product';
 
 @Component({
@@ -94,12 +94,19 @@ export class ProductAddComponent implements OnInit ,OnDestroy {
       return this.addProduct.get("rating");
         }
 
-
+  /* onSubmit() {
+    this.productService.createProduct(this.addProduct.value)
+      .subscribe( data => {console.log(data);
+        this.router.navigate(['products']);
+      });
+  }
+ */
+//method which renders the selected product on the form
   displayProduct(productParam:IProduct |null):void{
 
    this.product = productParam;
    if(this.product){
-
+//reset the form to its original
     this.addProduct.reset();
 
     if(this.product.id==0){

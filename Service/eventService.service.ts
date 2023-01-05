@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, catchError, map, Observable, tap, throwError} from "rxjs";
-import {IEvent} from "../src/app/event/event";
+import {IEvent} from '../src/app/events/events';
 
 
 @Injectable({
@@ -49,13 +49,14 @@ export class EventService{
 
   }
 
-  newProduct():IEvent{
+  newProduct():{ date: string; sessions: any[]; price: number; imageUrl: string; imageURL: string; name: string; location: { country: string; address: string; city: string }; time: string; id: number }{
     //logic should focus on sending back a IProduct
     return {
+      imageUrl: "", sessions: [],
       date: "", imageURL: "", location: {address: "", city: "", country: ""}, time: "",
       id:0,
       name:'',
-      price:0,
+      price:0
     };
 
   }

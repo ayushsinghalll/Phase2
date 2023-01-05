@@ -1,9 +1,33 @@
 h1{
-    background-color: green;
-    color:yellow;
+
+    margin: 10px 10px;
+    border:1px solid red;
+    background-color:cyan;
+        padding: 5px;
     text-align: center;
+
 }
-.flex{
+.container{
     display: flex;
+    align-items: center;
+
 }
 
+.flex-item
+{
+    height:200px;
+    margin:10px;
+    padding :10px;
+    width: 50%;
+    border:1px solid red;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.redborder{
+  border:1px solid red;
+}
+
+.size30{
+    font-size: 30px;
+}
