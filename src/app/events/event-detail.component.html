@@ -1,21 +1,41 @@
-<div class="well hoverwell detail">
-    <h2>{{event?.name}}</h2>
-    <div>Date: {{event?.date}}</div>
-    <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">Time: {{event?.time}}
-      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
-      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
-      <span *ngSwitchDefault>(Normal Start)</span>
-    </div>
-    <div>Price: {{event?.price | currency :'INR'}}</div>
-    <div *ngIf="event?.location">
-      <span>Location: {{event?.location?.address}}</span>
-      <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
-    </div>
-    <div *ngIf="event?.onlineUrl">
-      Online URL: {{event?.onlineUrl}}
-    </div>
+<!--<div class="well hoverwell detail">-->
+<!--    <h2>{{event?.name}}</h2>-->
+<!--    <div>Date: {{event?.date}}</div>-->
+<!--    <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">Time: {{event?.time}}-->
+<!--      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>-->
+<!--      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>-->
+<!--      <span *ngSwitchDefault>(Normal Start)</span>-->
+<!--    </div>-->
+<!--    <div>Price: {{event?.price | currency :'INR'}}</div>-->
+<!--    <div *ngIf="event?.location">-->
+<!--      <span>Location: {{event?.location?.address}}</span>-->
+<!--      <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>-->
+<!--    </div>-->
+<!--    <div *ngIf="event?.onlineUrl">-->
+<!--      Online URL: {{event?.onlineUrl}}-->
+<!--    </div>-->
 
-    <div id="data">{{event|json}}</div>
+<!--    <div id="data">{{event|json}}</div>-->
 
-    <div id="messageDisplay">{{ message }}</div>
-  </div>
+<!--    <div id="messageDisplay">{{ message }}</div>-->
+<!--  </div>-->
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{event.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Date:{{event.date}}</p>
+        <p>Price :{{event.price}}</p>
+        <p>Address: {{event.location.address}}</p>
+      </mat-card-content>
+      <mat-card-footer class="image">
+        <img mat-card-image src="../../assets/images/flat101.jpg" width="100px" height="100px"
+             (mouseover)="applyAnimation($event)"
+             (mouseout)="applyAnimation($event)"
+             [@enlarge]="isHovering  ? 'end' : 'start'"
+        >
+
+      </mat-card-footer>
+    </mat-card>
+
+

@@ -1,4 +1,7 @@
 
-    .detail { min-height: 210px; }
-    .pad-left { margin-left: 10px; }
-    .well div { color: #bbb; }
+.card {
+  max-width: 400px;
+}
+.image {
+  background-size: cover;
+}

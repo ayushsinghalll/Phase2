@@ -55,6 +55,13 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import {MatCardModule} from "@angular/material/card";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatButtonModule} from "@angular/material/button";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -116,7 +123,14 @@ import { AppEffects } from './app.effects';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument(),
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService),
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
