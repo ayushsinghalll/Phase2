@@ -98,6 +98,11 @@ const routes:Routes=[
     path:'todo',
   loadChildren:()=>import('./todo/todo.module').then((m)=>m.TodoModule)
   },
+  {
+    path:'product',
+    loadChildren:()=>import('./product/product.module').then((m)=>m.ProductModule)
+  },
+
 {path:'**',component:PagenotfoundComponent}
 
 

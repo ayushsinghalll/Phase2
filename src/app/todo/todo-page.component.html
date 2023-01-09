@@ -8,11 +8,19 @@
     <input type="submit" value="Add ToDo">
   </form>
   <ul>
-    <div *ngIf="allTodos$">
-      <div *ngFor="let todo of allTodos$ | async">
 
-        <li (click)="removeTodo(todo)" >{{todo.content}}
-        </li>
+    <div *ngFor="let todo of allTodos$ | async">
 
-      </div></div></ul>
+      <li  >
+        <div class="row">
+        <div class="col-6">
+        {{todo.content}}
+        </div>
+        <div class="col-6">
+          <button class="btn btn-danger mb-3"(click)="removeTodo(todo)">Remove</button>
+        </div>
+        </div>
+      </li>
+
+    </div></ul>
 </div>

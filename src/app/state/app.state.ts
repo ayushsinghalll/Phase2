@@ -1,6 +1,4 @@
-import { TodoState } from "./todos/todo.reducer";
 
-export interface AppState
+export interface State
 {
-  todos:TodoState;
 }

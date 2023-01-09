@@ -5,6 +5,7 @@ import { IEvent } from "src/app/events/events";
 import { EventService } from "./shared/event.service";
 import { IProduct ,Category} from "./products/product";
 import {Todo} from "./todo/todo.model";
+import {ProductModel} from "./product/product.model";
 @Injectable({providedIn:'root'})
 export class InMemoryEventDbService
 implements InMemoryDbService{
@@ -13,12 +14,26 @@ implements InMemoryDbService{
       const todos: Todo[]=[
         {
           id:'111',
-          content:'hello'
+          content:'Gaming'
          },
         {
           id:'222',
-          content:'angular web db'
+          content:'Coding'
         }];
+      const product:ProductModel[]=[
+        {
+          id:'1',
+          name:'Apple',
+          price:45,
+          imageURL:"../../assets/images/apple.jpg"
+        },
+        {
+          id:'2',
+          name:'Tomato',
+          price:45,
+          imageURL:"../../assets/images/tomato.jpg"
+        }
+      ]
 
      const events : IEvent[] = [
         {
@@ -278,7 +293,7 @@ implements InMemoryDbService{
 
     ];
 
-      return  {events,products,trustees,todos};
+      return  {events,products,trustees,todos,product};
     }}
 
 

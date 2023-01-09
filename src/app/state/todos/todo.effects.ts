@@ -1,14 +1,18 @@
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, of } from 'rxjs';
-import {loadTodos,LoadTodoSuccess,LoadTodoFailure} from './todo.action';
-import {ToDoService} from "../../todo/todo.service";
-import {Injectable} from "@angular/core";
+import { Store } from '@ngrx/store';
+import { ToDoService } from 'src/app/todo/todo.service';
+import { catchError, from, map, mergeMap, of, switchMap, withLatestFrom } from 'rxjs';
+import {addTodo,removeTodo,loadTodos,LoadTodoSuccess,LoadTodoFailure} from './todo.action';
+import { TodoState } from './todo.state';
+import { getTodos } from './todo.selector';
 
 @Injectable()
 
 export class TodoEffects{
 
-  constructor(private actions$:Actions,private todoService:ToDoService){}
+  constructor(private actions$:Actions,private store:Store<TodoState>,private todoService:ToDoService){}
+
 
   loadTodos$= createEffect(()=>{
     let err1 : string | any;
@@ -21,7 +25,18 @@ export class TodoEffects{
           ))
       )
 
+  });
 
 
-  })
+  saveTodos$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(addTodo, removeTodo),
+        withLatestFrom(this.store.select(getTodos)),
+        switchMap(([action, todos]) => from(this.todoService.createTodo(todos[0])))
+      ),
+
+    { dispatch: false }
+  );
 }
+

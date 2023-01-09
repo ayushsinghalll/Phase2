@@ -1,22 +1,7 @@
 import {addTodo,removeTodo,loadTodos,LoadTodoSuccess,LoadTodoFailure} from './todo.action';
-import { Todo } from '../../todo/todo.model';
 import { createReducer, on } from '@ngrx/store';
+import { initialState } from './todo.state';
 
-
-export  interface TodoState{
-  todos:Todo[];
-  error:string;
-  status:'pending' | 'loading' | 'error' |'success';
-}
-
-
-export const initialState :TodoState = {
-
-  todos:[],
-  error:'',
-  status:'pending'
-
-}
 
 export const todoReducer = createReducer(
   initialState,
