@@ -9,6 +9,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {RouterLinkActive, RouterLinkWithHref, RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {AppRoutingModule} from "./app-routing.module";
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-   AppRoutingModule
+    AppRoutingModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
